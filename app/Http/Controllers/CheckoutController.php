@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use Cart;
-use App\Models\Product;
+
 use Illuminate\Http\Request;
 
-class CartController extends Controller
+class CheckoutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +13,7 @@ class CartController extends Controller
      */
     public function index()
     {
-        $recommended = Product::recommended()->get();
-
-        return view('cart')->with('recommended', $recommended);
+        return view('checkout');
     }
 
     /**
@@ -37,10 +34,7 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        Cart::add($request->id, $request->name, 1, $request->price)
-        ->associate('App\Model\Product');
-
-        return redirect()->route('cart.index')->with('success', 'Product was added to your cart');
+        //
     }
 
     /**
@@ -49,9 +43,9 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function empty()
+    public function show($id)
     {
-        // Cart::destroy()
+        //
     }
 
     /**
@@ -85,34 +79,6 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        Cart::remove($id);
-
-        return back()->with('success', 'Product is removed');
-    }
-
-     /**
-     * Save for Later
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function saveForLater($id)
-    {
-        $item = Cart::get($id);
-
-        Cart::remove($id);
-
-        $duplicates = Cart::instance('saveForLater')->search(function($cartItem, $rowId) use ($id){
-            return $rowId === $id;
-        });
-
-        if ($duplicates->isNotEmpty()) {
-            return redirect()->route('cart.index')->with('success', 'Item is already Saved');
-        }
-
-        Cart::instance('saveForLater')->add($item->id, $item->name, 1, $item->price)
-        ->associate('App\Model\Product');
-
-        return redirect()->route('cart.index')->with('success', 'Product has been saved for later!');
+        //
     }
 }

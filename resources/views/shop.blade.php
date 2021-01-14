@@ -674,6 +674,7 @@
                         <!-- End Shop-control-bar -->
                         <!-- Shop Body -->
                         <!-- Tab Content -->
+                        @if(count($products) > 0)
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade pt-2 show active" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
                                 <ul class="row list-unstyled products-group no-gutters">
@@ -874,6 +875,10 @@
                                 </ul>
                             </div>
                         </div>
+                        @else
+                        <br>
+                        <h3 class="section-title section-title__full mb-0 pb-2 font-size-22">No Products Available On this Section</h3>
+                        @endif
                         <!-- End Tab Content -->
                         <!-- End Shop Body -->
                         <!-- Shop Pagination -->
@@ -1582,12 +1587,12 @@
                                         <li class="mb-4">
                                             <div class="row">
                                                 <div class="col-auto">
-                                                    <a href="{{ route('shop.show', $product->slug) }}" class="d-block width-75">
+                                                    <a href="#" class="d-block width-75">
                                                         <img class="img-fluid" src="../../assets/img/300X300/img1.jpg" alt="Image Description">
                                                     </a>
                                                 </div>
                                                 <div class="col">
-                                                    <h3 class="text-lh-1dot2 font-size-14 mb-0"><a href="{{ route('shop.show', $product->slug) }}">Notebook Black Spire V Nitro VN7-591G</a></h3>
+                                                    <h3 class="text-lh-1dot2 font-size-14 mb-0"><a href="#">Notebook Black Spire V Nitro VN7-591G</a></h3>
                                                     <div class="text-warning text-ls-n2 font-size-16 mb-1" style="width: 80px;">
                                                         <small class="fas fa-star"></small>
                                                         <small class="fas fa-star"></small>
@@ -1605,12 +1610,12 @@
                                         <li class="mb-4">
                                             <div class="row">
                                                 <div class="col-auto">
-                                                    <a href="{{ route('shop.show', $product->slug) }}" class="d-block width-75">
+                                                    <a href="#" class="d-block width-75">
                                                         <img class="img-fluid" src="../../assets/img/300X300/img3.jpg" alt="Image Description">
                                                     </a>
                                                 </div>
                                                 <div class="col">
-                                                    <h3 class="text-lh-1dot2 font-size-14 mb-0"><a href="{{ route('shop.show', $product->slug) }}">Notebook Black Spire V Nitro VN7-591G</a></h3>
+                                                    <h3 class="text-lh-1dot2 font-size-14 mb-0"><a href="#">Notebook Black Spire V Nitro VN7-591G</a></h3>
                                                     <div class="text-warning text-ls-n2 font-size-16 mb-1" style="width: 80px;">
                                                         <small class="fas fa-star"></small>
                                                         <small class="fas fa-star"></small>
@@ -1627,12 +1632,12 @@
                                         <li class="mb-4">
                                             <div class="row">
                                                 <div class="col-auto">
-                                                    <a href="{{ route('shop.show', $product->slug) }}" class="d-block width-75">
+                                                    <a href="#" class="d-block width-75">
                                                         <img class="img-fluid" src="../../assets/img/300X300/img5.jpg" alt="Image Description">
                                                     </a>
                                                 </div>
                                                 <div class="col">
-                                                    <h3 class="text-lh-1dot2 font-size-14 mb-0"><a href="{{ route('shop.show', $product->slug) }}">Tablet Thin EliteBook Revolve 810 G6</a></h3>
+                                                    <h3 class="text-lh-1dot2 font-size-14 mb-0"><a href="#">Tablet Thin EliteBook Revolve 810 G6</a></h3>
                                                     <div class="text-warning text-ls-n2 font-size-16 mb-1" style="width: 80px;">
                                                         <small class="fas fa-star"></small>
                                                         <small class="fas fa-star"></small>
