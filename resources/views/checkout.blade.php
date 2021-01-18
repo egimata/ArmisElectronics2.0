@@ -74,6 +74,7 @@
                                         <thead>
                                             <tr>
                                                 <th class="product-name">Product</th>
+                                                <th class="product-price" style="text-align: center;">Price</th>
                                                 <th class="product-total">Total</th>
                                             </tr>
                                         </thead>
@@ -81,17 +82,21 @@
                                         <tbody>
                                             <tr class="cart_item">
                                                 <td>{{ $item->name }}&nbsp;<strong class="product-quantity">× {{ $item->qty }}</strong></td>
-                                                <td>${{ number_format($item->price) }}</td>
+                                                <td style="text-align: center;"s>${{ $item->price }}</td>
+                                                <td>${{ $item->subtotal }}</td>
                                             </tr>
                                         </tbody>
                                         @endforeach
+
                                         <tfoot>
-                                            <tr>
+                                            <tr style="border-top: 4px solid #fed700;">
                                                 <th>Subtotal</th>
+                                                <td></td>
                                                 <td>${{ Cart::subtotal() }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Tax</th>
+                                                <td></td>
                                                 <td>${{ Cart::tax() }}</td>
                                             </tr>
                                             {{-- <tr>
@@ -100,6 +105,7 @@
                                             </tr> --}}
                                             <tr>
                                                 <th>Total</th>
+                                                <td></td>
                                                 <td><strong>${{ Cart::total() }}</strong></td>
                                             </tr>
                                         </tfoot>

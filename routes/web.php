@@ -25,6 +25,7 @@ Route::get('/shop/{product}', 'App\Http\Controllers\ShopController@show')->name(
 
 Route::get('/cart', 'App\Http\Controllers\CartController@index')->name('cart.index');
 Route::post('/cart', 'App\Http\Controllers\CartController@store')->name('cart.store');
+Route::patch('/cart/{product}', 'App\Http\Controllers\CartController@update')->name('cart.update');
 Route::delete('/cart/{product}', 'App\Http\Controllers\CartController@destroy')->name('cart.destroy');
 Route::post('/cart/saveForLater/{product}', 'App\Http\Controllers\CartController@saveForLater')->name('cart.saveForLater');
 

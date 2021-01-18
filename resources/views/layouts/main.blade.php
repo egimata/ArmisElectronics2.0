@@ -54,6 +54,7 @@
         </main>
     </div>
     @include('partials.footer')
+    @yield('javascript')
 
 
     <!-- Go to Top -->
