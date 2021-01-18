@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class CheckoutRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return false;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            'firstName' => 'required',
+            'lastName' => 'required',
+            'companyName' => 'null',
+            'state' => 'required',
+            'streetAddress' => 'required',
+            'apartment' => 'null',
+            'postcode' => 'required',
+            'cityAddress' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+
+        ];
+    }
+}

@@ -32,14 +32,13 @@ Route::delete('/saved/{product}', 'App\Http\Controllers\SaveController@destroy')
 Route::post('/saved/saveForLater/{product}', 'App\Http\Controllers\SaveController@switchToCart')->name('save.switchToCart');
 
 Route::get('/checkout', 'App\Http\Controllers\CheckoutController@index')->name('checkout.index');
+Route::post('/checkout', 'App\Http\Controllers\CheckoutController@store')->name('checkout.store');
 
 
 Route::get('empty', function(){
     Cart::instance('saveForLater')->destroy();
 });
 
-
-Route::view('/checkout', 'checkout');
 Route::view('/thankyou', 'thankyou');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
